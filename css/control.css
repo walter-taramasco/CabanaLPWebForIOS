@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap');
+
+:root {
+    --nav-height: 80px;
+    --color-fondo: #FFFFFF;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: var(--color-fondo);
+    font-family: "Hind", system-ui, -apple-system, -apple-system-font, sans-serif;
+    height: 100vh;
+    padding-bottom: var(--nav-height);
+    margin: 0;
+    width: 100%;
+    color: #292929;
+}
+
+/* App */
+.control {
+    margin: 0 0 40px 0;
+}
+
+.control h1 {
+    font-size: 2.5rem;
+    margin: 20px 0 0 0;
+    text-align: center;
+    text-decoration: underline !important;
+}
+
+.nombre-conejo {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px 0;
+}
+
+.nombre-conejo > input {
+    padding: 10px;
+}
+
+#nombredelconejo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+}
+
+#limpiar {
+    display: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #5271FF;
+    color: #FFF;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+    cursor: pointer;
+}
+
+#localNombre {
+    font-size: 1.8rem;
+    margin: 0 0 0 10px;
+}
+
+#remove-conejo-name {
+    display: flex;
+}
+
+.conejo-1 {
+    padding: 5px 0 5px 8px;
+    margin: 0 10px;
+}
+
+.confirmacion {
+  border: 0;
+  border-radius: 5px;
+  background-color: #5271FF;
+  padding: 8px;
+  color: #FFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.grid-control {
+    margin: 30px 30px 0 30px;
+}
+
+.nacimiento {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    border-radius: 10px;
+    color: #000000;
+    background-color: #D7DEFF;
+}
+
+label {
+    font-size: 1.7rem;
+}
+
+input {
+    border-color: #343434;
+    background-color: #5271FF;
+    color: #FFF;
+    border: 0;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 1.7rem;
+    outline: 0;
+    margin: 0 0 0 10px;
+}
+
+.reset,
+.confirmar-fecha {
+    background-color: #5271FF;
+    color: #FFF;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0 0 0 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.antiparasitarios-vacio {
+    height: 50px;
+}
+
+#fechinhaTemporal {
+    display: inline;
+    font-size: 1.5rem;
+    margin: 0 0 0 10px;
+    font-weight: bold;
+}
+
+#fechaGuardada {
+    display: none;
+    font-size: 1.5rem;
+    margin: 0 0 0 10px;
+    font-weight: bold;
+}
+
+#divRemoverFecha {
+    display: inline;
+}
+
+#resetear-fecha {
+    display: none;
+}
+
+.fechaGuardada1 {
+    margin: 0 10px 0 0;
+}
+.antiparasitarios-vacio,
+.antiparasitarios-1,
+.antiparasitarios-2,
+.antiparasitarios-3,
+.antiparasitarios-4,
+.antiparasitarios-5,
+.antiparasitarios-6,
+.antiparasitarios-7,
+.antiparasitarios-8,
+.antiparasitarios-9,
+.antiparasitarios-10,
+.antiparasitarios-11,
+.antiparasitarios-12,
+.antiparasitarios-13,
+.antiparasitarios-14,
+.antiparasitarios-15,
+.antiparasitarios-16,
+.antiparasitarios-17,
+.antiparasitarios-18,
+.antiparasitarios-19,
+.antiparasitarios-20,
+.antiparasitarios-21,
+.antiparasitarios-22,
+.antiparasitarios-23,
+.antiparasitarios-24,
+.antiparasitarios-25,
+.antiparasitarios-26,
+.antiparasitarios-27,
+.antiparasitarios-28,
+.antiparasitarios-29,
+.antiparasitarios-30,
+.antiparasitarios-31,
+.antiparasitarios-32 {
+    padding: 15px;
+    margin: 20px 0 0 0;
+    background-color: #D7DEFF;
+}
+
+.antiparasitarios-1 > label,
+.antiparasitarios-2 > label,
+.antiparasitarios-3 > label,
+.antiparasitarios-4 > label,
+.antiparasitarios-5 > label,
+.antiparasitarios-6 > label,
+.antiparasitarios-7 > label,
+.antiparasitarios-8 > label,
+.antiparasitarios-9 > label,
+.antiparasitarios-10 > label,
+.antiparasitarios-11 > label,
+.antiparasitarios-12 > label,
+.antiparasitarios-13 > label,
+.antiparasitarios-14 > label,
+.antiparasitarios-15 > label,
+.antiparasitarios-16 > label,
+.antiparasitarios-17 > label,
+.antiparasitarios-18 > label,
+.antiparasitarios-19 > label,
+.antiparasitarios-20 > label,
+.antiparasitarios-21 > label,
+.antiparasitarios-22 > label,
+.antiparasitarios-23 > label,
+.antiparasitarios-24 > label,
+.antiparasitarios-25 > label,
+.antiparasitarios-26 > label,
+.antiparasitarios-27 > label,
+.antiparasitarios-28 > label,
+.antiparasitarios-29 > label,
+.antiparasitarios-30 > label,
+.antiparasitarios-31 > label,
+.antiparasitarios-32 > label {
+  font-weight: bold;
+	text-decoration: underline;
+}
+
+.dosis-1,
+.dosis-2,
+.dosis-3,
+.dosis-4,
+.dosis-5,
+.dosis-6,
+.dosis-7,
+.dosis-8,
+.dosis-9,
+.dosis-10,
+.dosis-11,
+.dosis-12,
+.dosis-13,
+.dosis-14,
+.dosis-15,
+.dosis-16,
+.dosis-17,
+.dosis-18,
+.dosis-19,
+.dosis-20,
+.dosis-21,
+.dosis-22,
+.dosis-23,
+.dosis-24,
+.dosis-25,
+.dosis-26,
+.dosis-27,
+.dosis-28,
+.dosis-29,
+.dosis-30,
+.dosis-31,
+.dosis-32 {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 0 0;
+}
+
+.dosis-1 p,
+.dosis-2 p,
+.dosis-3 p,
+.dosis-4 p,
+.dosis-5 p,
+.dosis-6 p,
+.dosis-7 p,
+.dosis-8 p,
+.dosis-9 p,
+.dosis-10 p,
+.dosis-11 p,
+.dosis-12 p,
+.dosis-13 p,
+.dosis-14 p,
+.dosis-15 p,
+.dosis-16 p,
+.dosis-17 p,
+.dosis-18 p,
+.dosis-19 p,
+.dosis-20 p,
+.dosis-21 p,
+.dosis-22 p,
+.dosis-23 p,
+.dosis-24 p,
+.dosis-25 p,
+.dosis-26 p,
+.dosis-27 p,
+.dosis-28 p,
+.dosis-29 p,
+.dosis-30 p,
+.dosis-31 p,
+.dosis-32 p {
+    font-size: 1.4rem;
+    white-space: nowrap;
+}
+
+.dosis-1 span,
+.dosis-2 span,
+.dosis-3 span,
+.dosis-4 span,
+.dosis-5 span,
+.dosis-6 span,
+.dosis-7 span,
+.dosis-8 span,
+.dosis-9 span,
+.dosis-10 span,
+.dosis-11 span,
+.dosis-12 span,
+.dosis-13 span,
+.dosis-14 span,
+.dosis-15 span,
+.dosis-16 span,
+.dosis-17 span,
+.dosis-18 span,
+.dosis-19 span,
+.dosis-20 span,
+.dosis-21 span,
+.dosis-22 span,
+.dosis-23 span,
+.dosis-24 span,
+.dosis-25 span,
+.dosis-26 span,
+.dosis-27 span,
+.dosis-28 span,
+.dosis-29 span,
+.dosis-30 span,
+.dosis-31 span,
+.dosis-32 span {
+    font-size: 1.5rem;
+    margin: 0 5px;
+}
+
+.aplicada1,
+.aplicada2,
+.aplicada3,
+.aplicada4,
+.aplicada5,
+.aplicada6,
+.aplicada7,
+.aplicada8,
+.aplicada9,
+.aplicada10,
+.aplicada11,
+.aplicada12,
+.aplicada13,
+.aplicada14,
+.aplicada15,
+.aplicada16,
+.aplicada17,
+.aplicada18,
+.aplicada19,
+.aplicada20,
+.aplicada21,
+.aplicada22,
+.aplicada23,
+.aplicada24,
+.aplicada25,
+.aplicada26,
+.aplicada27,
+.aplicada28,
+.aplicada29,
+.aplicada30,
+.aplicada31,
+.aplicada32,
+.aplicada33,
+.aplicada34,
+.aplicada35,
+.aplicada36,
+.aplicada37,
+.aplicada38,
+.aplicada39,
+.aplicada40,
+.aplicada41,
+.aplicada42,
+.aplicada43,
+.aplicada44,
+.aplicada45,
+.aplicada46,
+.aplicada47,
+.aplicada48,
+.aplicada49,
+.aplicada50,
+.aplicada51,
+.aplicada52,
+.aplicada53,
+.aplicada54,
+.aplicada55,
+.aplicada56,
+.aplicada57,
+.aplicada58,
+.aplicada59,
+.aplicada60,
+.aplicada61,
+.aplicada62,
+.aplicada63,
+.aplicada64 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  background-color: red;
+  margin: 0 25px 0 10px;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Nav */
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--nav-height);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #D7DEFF;
+    display: flex;
+    overflow-x: auto;
+    transition: transform 1s;
+}
+
+.nav--hidden {
+    transform: translateY(calc(1 * var(--nav-height)));
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    color: #292929;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-link--active {
+    color: #FFF;
+    background-color: #3E60FF;
+}
+
+.nav-link p {
+  margin: 5px 0 0 0;
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 701px) {
+    .aplicada1,
+    .aplicada2,
+    .aplicada3,
+    .aplicada4,
+    .aplicada5,
+    .aplicada6,
+    .aplicada7,
+    .aplicada8,
+    .aplicada9,
+    .aplicada10,
+    .aplicada11,
+    .aplicada12,
+    .aplicada13,
+    .aplicada14,
+    .aplicada15,
+    .aplicada16,
+    .aplicada17,
+    .aplicada18,
+    .aplicada19,
+    .aplicada20,
+    .aplicada21,
+    .aplicada22,
+    .aplicada23,
+    .aplicada24,
+    .aplicada25,
+    .aplicada26,
+    .aplicada27,
+    .aplicada28,
+    .aplicada29,
+    .aplicada30,
+    .aplicada31,
+    .aplicada32,
+    .aplicada33,
+    .aplicada34,
+    .aplicada35,
+    .aplicada36,
+    .aplicada37,
+    .aplicada38,
+    .aplicada39,
+    .aplicada40,
+    .aplicada41,
+    .aplicada42,
+    .aplicada43,
+    .aplicada44,
+    .aplicada45,
+    .aplicada46,
+    .aplicada47,
+    .aplicada48,
+    .aplicada49,
+    .aplicada50,
+    .aplicada51,
+    .aplicada52,
+    .aplicada53,
+    .aplicada54,
+    .aplicada55,
+    .aplicada56,
+    .aplicada57,
+    .aplicada58,
+    .aplicada59,
+    .aplicada60,
+    .aplicada61,
+    .aplicada62,
+    .aplicada63,
+    .aplicada64 {
+      margin: 0 0 15px 0;
+    }
+    .dosis-1,
+    .dosis-2,
+    .dosis-3,
+    .dosis-4,
+    .dosis-5,
+    .dosis-6,
+    .dosis-7,
+    .dosis-8,
+    .dosis-9,
+    .dosis-10,
+    .dosis-11,
+    .dosis-12,
+    .dosis-13,
+    .dosis-14,
+    .dosis-15,
+    .dosis-16,
+    .dosis-17,
+    .dosis-18,
+    .dosis-19,
+    .dosis-20,
+    .dosis-21,
+    .dosis-22,
+    .dosis-23,
+    .dosis-24,
+    .dosis-25,
+    .dosis-26,
+    .dosis-27,
+    .dosis-28,
+    .dosis-29,
+    .dosis-30,
+    .dosis-31,
+    .dosis-32 {
+      margin:  0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dosis-1 p,
+.dosis-2 p,
+.dosis-3 p,
+.dosis-4 p,
+.dosis-5 p,
+.dosis-6 p,
+.dosis-7 p,
+.dosis-8 p,
+.dosis-9 p,
+.dosis-10 p,
+.dosis-11 p,
+.dosis-12 p,
+.dosis-13 p,
+.dosis-14 p,
+.dosis-15 p,
+.dosis-16 p,
+.dosis-17 p,
+.dosis-18 p,
+.dosis-19 p,
+.dosis-20 p,
+.dosis-21 p,
+.dosis-22 p,
+.dosis-23 p,
+.dosis-24 p,
+.dosis-25 p,
+.dosis-26 p,
+.dosis-27 p,
+.dosis-28 p,
+.dosis-29 p,
+.dosis-30 p,
+.dosis-31 p,
+.dosis-32 p {
+    margin: 2px 0;
+}
+.antiparasitarios-1 > label,
+.antiparasitarios-2 > label,
+.antiparasitarios-3 > label,
+.antiparasitarios-4 > label,
+.antiparasitarios-5 > label,
+.antiparasitarios-6 > label,
+.antiparasitarios-7 > label,
+.antiparasitarios-8 > label,
+.antiparasitarios-9 > label,
+.antiparasitarios-10 > label,
+.antiparasitarios-11 > label,
+.antiparasitarios-12 > label,
+.antiparasitarios-13 > label,
+.antiparasitarios-14 > label,
+.antiparasitarios-15 > label,
+.antiparasitarios-16 > label,
+.antiparasitarios-17 > label,
+.antiparasitarios-18 > label,
+.antiparasitarios-19 > label,
+.antiparasitarios-20 > label,
+.antiparasitarios-21 > label,
+.antiparasitarios-22 > label,
+.antiparasitarios-23 > label,
+.antiparasitarios-24 > label,
+.antiparasitarios-25 > label,
+.antiparasitarios-26 > label,
+.antiparasitarios-27 > label,
+.antiparasitarios-28 > label,
+.antiparasitarios-29 > label,
+.antiparasitarios-30 > label,
+.antiparasitarios-31 > label,
+.antiparasitarios-32 > label {
+  display: flex;
+	justify-content: center;
+}
+@media screen and (max-width: 520px) {
+    .nacimiento {
+        flex-direction: column;
+    }
+    .nac {
+        margin: 0 0 5px 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .conejo-1 {
+        width: 150px;
+    }
+}
+@media screen and (max-width: 464px) {
+    .conejo-1 {
+        width: 130px;
+    }
+    .reset {
+        margin: 10px 0 0 0;
+    }
+}
+@media screen and (max-width: 418px) {
+    #remove-conejo-name {
+        flex-direction: column;
+        align-items: center;
+    }
+    .conejo-1 {
+        width: 150px;
+        padding: 4px;
+    }
+    .confirmacion {
+        margin: 12px 0 0 0;
+        width: 150px;
+        padding: 2px;
+    }
+
+}
+@media screen and (max-width: 396px) {
+    .nav-link {
+        white-space: normal;
+    }
+    .divRemoverFechaa {
+        margin: 0 50px;
+    }
+    .confirmar-fecha {
+        margin: 10px 50px 0 50px;
+    }
+}
+@media screen and (max-width: 352px) {
+    .nav-link p {
+        margin: 2px 20px;
+    }
+    .nav-link span {
+        margin: 0 0 6px 0;
+    }
+}
+@media screen and (max-width: 318px) {
+    .control h1 {
+        font-size: 2rem;
+    }
+    .labelNombreDelConejo {
+        font-size: 1.5rem;
+    }
+    .nav-link p {
+        margin: 2px 10px;
+    }
+}
+@media screen and (max-width: 306px) {
+    .nombre-conejo {
+        flex-direction: column;
+    }
+    .labelNombreDelConejo {
+        margin:  0 0 10px 0;
+    }
+    #nombredelconejo {
+        margin: 0 0 10px 0;
+    }
+}

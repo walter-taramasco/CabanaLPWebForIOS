@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap');
+
+:root {
+    --nav-height: 80px;
+    --color-fondo: #FFFFFF;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: var(--color-fondo);
+    font-family: "Hind", system-ui, -apple-system, -apple-system-font, "Segoe UI", sans-serif;
+    margin: 0;
+    padding-bottom: var(--nav-height);
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    width: 100%;
+    color: #ffffff;
+}
+
+/* Preguntas App */
+.preguntas {
+    margin: 0 50px 40px 50px;
+}
+
+.preguntas h1 {
+    font-size: 2.5rem;
+    margin: 20px 0 40px 0;
+    text-align: center;
+    text-decoration: underline !important;
+    white-space: nowrap;
+    color: #292929;
+}
+
+.preguntas-div {
+    color: #292929;
+    background-color: #D7DEFF;
+    padding: 8px 12px 8px 12px;
+    line-height: 1.5;
+    border-radius: 10px;
+}
+
+.preguntas-div p {
+    font-size: 1.4rem;
+}
+
+.p-strong {
+    font-weight: bold;
+    color: red;
+}
+.p-alimentacion {
+    color: red;
+    font-size: 1.4rem;
+}
+
+/* Nav */
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--nav-height);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #D7DEFF;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    color: #292929;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.1s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-link--active {
+    color: #FFF;
+    background-color: #3E60FF;
+}
+
+.nav-link p {
+  margin: 5px 0 0 0;
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 425px) {
+    .preguntas h1 {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 396px) {
+    .nav-link {
+        white-space: normal;
+    }
+}
+@media screen and (max-width: 352px) {
+    .nav-link p {
+        margin: 2px 20px;
+    }
+    .nav-link span {
+        margin: 0 0 6px 0;
+    }
+}
+@media screen and (max-width: 318px) {
+    .preguntas h1 {
+        font-size: 1.5rem;
+    }
+    .nav-link p {
+        margin: 2px 10px;
+    }
+}

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+        <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https: ; object-src 'none'; frame-src 'none'; base-uri 'none'">
+      <meta name="description=" content="Web exclusiva para clientes de CLP en la que puedes mantener un mayor control sobre la aplicación de los antiparasitarios de tu conejo, ver productos a la venta e información importante."
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/control.css" />
+        <title>Control del Conejo</title>
+    </head>
+    <body>
+            <div class="control">
+                <h1>Control del conejo</h1>
+                <div class="grid-control">
+                    <div class="nombre-conejo">
+                        <label class="labelNombreDelConejo">Nombre del conejo:</label>
+                        <p id="localNombre"></p>
+                        <p id="nombredelconejo"></p>
+                        <button id="limpiar" class="resetear" type="reset">Cambiar nombre</button>
+                        <div id="remove-conejo-name">
+                        <input type="text"
+                            class="conejo-1"
+                            id="conejoname"
+                        ></input>
+                        <button class="confirmacion" id="confirmar" name="confirmarelnombre">Confirmar nombre</button>
+                        </div>
+                    </div>
+                    <div class="nacimiento">
+                        <label class="nac">Fecha de nac.:</label>
+                        <div id="divRemoverFecha" class="divRemoverFechaa">
+                        <input class="date-1" id="fechaNacimiento" type="date"/>
+                            <button class="confirmar-fecha" id="confirmar-fec">Confirmar fecha</button>
+                        </div>
+                        <p id="fechaGuardada" class="localFechaGuardadinha"></p>
+                        <p id="fechinhaTemporal" class="fechaTemporal"></p>
+                            <button class="reset" type="reset" id="resetear-fecha">Cambiar fecha</button>
+                        </div>
+                    <div class="antiparasitarios-1">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-1">
+                        <p>Primera dosis:</p>
+                        <span id="primeradosis"></span>
+                        <p id="fechaGuardada1"></p>
+                        <div id="aplicada1id" class="aplicada1">
+                            <p id="seaplico1">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="segundadosis"></span>
+                        <p id="fechaGuardada2"></p>
+                        <div id="aplicada2id" class="aplicada2">
+                            <p id="seaplico2">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-2">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-2">
+                        <p>Primera dosis:</p>
+                        <span id="terceradosis"></span>
+                        <p id="fechaGuardada3"></p>
+                        <div id="aplicada3id" class="aplicada3">
+                            <p id="seaplico3">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuartadosis"></span>
+                        <p id="fechaGuardada4"></p>
+                        <div id="aplicada4id" class="aplicada4">
+                            <p id="seaplico4">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-3">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-3">
+                        <p>Primera dosis:</p>
+                        <span id="quintadosis"></span>
+                        <p id="fechaGuardada5"></p>
+                        <div id="aplicada5id" class="aplicada5">
+                            <p id="seaplico5">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="sextadosis"></span>
+                        <p id="fechaGuardada6"></p>
+                        <div id="aplicada6id" class="aplicada6">
+                            <p id="seaplico6">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-4">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-4">
+                        <p>Primera dosis:</p>
+                        <span id="septimadosis"></span>
+                        <p id="fechaGuardada7"></p>
+                        <div id="aplicada7id" class="aplicada7">
+                            <p id="seaplico7">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="octavadosis"></span>
+                        <p id="fechaGuardada8"></p>
+                        <div id="aplicada8id" class="aplicada8">
+                            <p id="seaplico8">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-5">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-5">
+                        <p>Primera dosis:</p>
+                        <span id="novenadosis"></span>
+                        <p id="fechaGuardada9"></p>
+                        <div id="aplicada9id" class="aplicada9">
+                            <p id="seaplico9">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="decimadosis"></span>
+                        <p id="fechaGuardada10"></p>
+                        <div id="aplicada10id" class="aplicada10">
+                            <p id="seaplico10">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-6">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-6">
+                        <p>Primera dosis:</p>
+                        <span id="decimoprimeradosis"></span>
+                        <p id="fechaGuardada11"></p>
+                        <div id="aplicada11id" class="aplicada11">
+                            <p id="seaplico11">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="decimosegundadosis"></span>
+                        <p id="fechaGuardada12"></p>
+                        <div id="aplicada12id" class="aplicada12">
+                            <p id="seaplico12">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-7">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-7">
+                        <p>Primera dosis:</p>
+                        <span id="decimoterceradosis"></span>
+                        <p id="fechaGuardada13"></p>
+                        <div id="aplicada13id" class="aplicada13">
+                            <p id="seaplico13">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="decimocuartadosis"></span>
+                        <p id="fechaGuardada14"></p>
+                        <div id="aplicada14id" class="aplicada14">
+                            <p id="seaplico14">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-8">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-8">
+                        <p>Primera dosis:</p>
+                        <span id="decimoquintadosis"></span>
+                        <p id="fechaGuardada15"></p>
+                        <div id="aplicada15id" class="aplicada15">
+                            <p id="seaplico15">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="decimosextadosis"></span>
+                        <p id="fechaGuardada16"></p>
+                        <div id="aplicada16id" class="aplicada16">
+                            <p id="seaplico16">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-9">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-9">
+                        <p>Primera dosis:</p>
+                        <span id="decimoseptimadosis"></span>
+                        <p id="fechaGuardada17"></p>
+                        <div id="aplicada17id" class="aplicada17">
+                            <p id="seaplico17">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="decimooctavadosis"></span>
+                        <p id="fechaGuardada18"></p>
+                        <div id="aplicada18id" class="aplicada18">
+                            <p id="seaplico18">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-10">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-10">
+                        <p>Primera dosis:</p>
+                        <span id="decimonovenadosis"></span>
+                        <p id="fechaGuardada19"></p>
+                        <div id="aplicada19id" class="aplicada19">
+                            <p id="seaplico19">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="veintedosis"></span>
+                        <p id="fechaGuardada20"></p>
+                        <div id="aplicada20id" class="aplicada20">
+                            <p id="seaplico20">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-11">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-11">
+                        <p>Primera dosis:</p>
+                        <span id="veintiunodosis"></span>
+                        <p id="fechaGuardada21"></p>
+                        <div id="aplicada21id" class="aplicada21">
+                            <p id="seaplico21">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="veintidosdosis"></span>
+						<p id="fechaGuardada22"></p>
+                        <div id="aplicada22id" class="aplicada22">
+                            <p id="seaplico22">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-12">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-12">
+                        <p>Primera dosis:</p>
+                        <span id="veintitresdosis"></span>
+                        <p id="fechaGuardada23"></p>
+                        <div id="aplicada23id" class="aplicada23">
+                            <p id="seaplico23">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="veinticuatrodosis"></span>
+                        <p id="fechaGuardada24"></p>
+                        <div id="aplicada24id" class="aplicada24">
+                            <p id="seaplico24">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-13">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-13">
+                        <p>Primera dosis:</p>
+                        <span id="veinticincodosis"></span>
+                        <p id="fechaGuardada25"></p>
+                        <div id="aplicada25id" class="aplicada25">
+                            <p id="seaplico25">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="veintiseisdosis"></span>
+                        <p id="fechaGuardada26"></p>
+                        <div id="aplicada26id" class="aplicada26">
+                            <p id="seaplico26">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-14">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-14">
+                        <p>Primera dosis:</p>
+                        <span id="veintisietedosis"></span>
+                        <p id="fechaGuardada27"></p>
+                        <div id="aplicada27id" class="aplicada27">
+                            <p id="seaplico27">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="veintiochodosis"></span>
+                        <p id="fechaGuardada28"></p>
+                        <div id="aplicada28id" class="aplicada28">
+                            <p id="seaplico28">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-15">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-15">
+                        <p>Primera dosis:</p>
+                        <span id="veintinuevedosis"></span>
+                        <p id="fechaGuardada29"></p>
+                        <div id="aplicada29id" class="aplicada29">
+                            <p id="seaplico29">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="treintadosis"></span>
+                        <p id="fechaGuardada30"></p>
+                        <div id="aplicada30id" class="aplicada30">
+                            <p id="seaplico30">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-16">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-16">
+                        <p>Primera dosis:</p>
+                        <span id="treintaunodosis"></span>
+                        <p id="fechaGuardada31"></p>
+                        <div id="aplicada31id" class="aplicada31">
+                            <p id="seaplico31">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="treintadosdosis"></span>
+                        <p id="fechaGuardada32"></p>
+                        <div id="aplicada32id" class="aplicada32">
+                            <p id="seaplico32">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-17">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-17">
+                        <p>Primera dosis:</p>
+                        <span id="treintatresdosis"></span>
+                        <p id="fechaGuardada33"></p>
+                        <div id="aplicada33id" class="aplicada33">
+                            <p id="seaplico33">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="treintacuatrodosis"></span>
+                        <p id="fechaGuardada34"></p>
+                        <div id="aplicada34id" class="aplicada34">
+                            <p id="seaplico34">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-18">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-18">
+                        <p>Primera dosis:</p>
+                        <span id="treintacincodosis"></span>
+                        <p id="fechaGuardada35"></p>
+                        <div id="aplicada35id" class="aplicada35">
+                            <p id="seaplico35">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="treintaseisdosis"></span>
+                        <p id="fechaGuardada36"></p>
+                        <div id="aplicada36id" class="aplicada36">
+                            <p id="seaplico36">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-19">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-19">
+                        <p>Primera dosis:</p>
+                        <span id="treintasietedosis"></span>
+                        <p id="fechaGuardada37"></p>
+                        <div id="aplicada37id" class="aplicada37">
+                            <p id="seaplico37">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="treintaochodosis"></span>
+                        <p id="fechaGuardada38"></p>
+                        <div id="aplicada38id" class="aplicada38">
+                            <p id="seaplico38">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-20">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-20">
+                        <p>Primera dosis:</p>
+                        <span id="treintanuevedosis"></span>
+                        <p id="fechaGuardada39"></p>
+                        <div id="aplicada39id" class="aplicada39">
+                            <p id="seaplico39">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuarentadosis"></span>
+                        <p id="fechaGuardada40"></p>
+                        <div id="aplicada40id" class="aplicada40">
+                            <p id="seaplico40">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-21">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-21">
+                        <p>Primera dosis:</p>
+                        <span id="cuarentaunodosis"></span>
+                        <p id="fechaGuardada41"></p>
+                        <div id="aplicada41id" class="aplicada41">
+                            <p id="seaplico41">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuarentadosdosis"></span>
+                        <p id="fechaGuardada42"></p>
+                        <div id="aplicada42id" class="aplicada42">
+                            <p id="seaplico42">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-22">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-22">
+                        <p>Primera dosis:</p>
+                        <span id="cuarentatresdosis"></span>
+                        <p id="fechaGuardada43"></p>
+                        <div id="aplicada43id" class="aplicada43">
+                            <p id="seaplico43">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuarentacuatrodosis"></span>
+                        <p id="fechaGuardada44"></p>
+                        <div id="aplicada44id" class="aplicada44">
+                            <p id="seaplico44">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-23">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-23">
+                        <p>Primera dosis:</p>
+                        <span id="cuarentacincodosis"></span>
+                        <p id="fechaGuardada45"></p>
+                        <div id="aplicada45id" class="aplicada45">
+                            <p id="seaplico45">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuarentaseisdosis"></span>
+                        <p id="fechaGuardada46"></p>
+                        <div id="aplicada46id" class="aplicada46">
+                            <p id="seaplico46">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-24">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-24">
+                        <p>Primera dosis:</p>
+                        <span id="cuarentasietedosis"></span>
+                        <p id="fechaGuardada47"></p>
+                        <div id="aplicada47id" class="aplicada47">
+                            <p id="seaplico47">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cuarentaochodosis"></span>
+                        <p id="fechaGuardada48"></p>
+                        <div id="aplicada48id" class="aplicada48">
+                            <p id="seaplico48">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                   <div class="antiparasitarios-25">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-25">
+                        <p>Primera dosis:</p>
+                        <span id="cuarentanuevedosis"></span>
+                        <p id="fechaGuardada49"></p>
+                        <div id="aplicada49id" class="aplicada49">
+                            <p id="seaplico49">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cincuentadosis"></span>
+                        <p id="fechaGuardada50"></p>
+                        <div id="aplicada50id" class="aplicada50">
+                            <p id="seaplico50">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-26">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-26">
+                        <p>Primera dosis:</p>
+                        <span id="cincuentaunodosis"></span>
+                        <p id="fechaGuardada51"></p>
+                        <div id="aplicada51id" class="aplicada51">
+                            <p id="seaplico51">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cincuentadosdosis"></span>
+                        <p id="fechaGuardada52"></p>
+                        <div id="aplicada52id" class="aplicada52">
+                            <p id="seaplico52">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-27">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-27">
+                        <p>Primera dosis:</p>
+                        <span id="cincuentatresdosis"></span>
+                        <p id="fechaGuardada53"></p>
+                        <div id="aplicada53id" class="aplicada53">
+                            <p id="seaplico53">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cincuentacuatrodosis"></span>
+                        <p id="fechaGuardada54"></p>
+                        <div id="aplicada54id" class="aplicada54">
+                            <p id="seaplico54">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-28">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-28">
+                        <p>Primera dosis:</p>
+                        <span id="cincuentacincodosis"></span>
+                        <p id="fechaGuardada55"></p>
+                        <div id="aplicada55id" class="aplicada55">
+                            <p id="seaplico55">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cincuentaseisdosis"></span>
+                        <p id="fechaGuardada56"></p>
+                        <div id="aplicada56id" class="aplicada56">
+                            <p id="seaplico56">No aplicada</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="antiparasitarios-29">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-29">
+                        <p>Primera dosis:</p>
+                        <span id="cincuentasietedosis"></span>
+                        <p id="fechaGuardada57"></p>
+                        <div id="aplicada57id" class="aplicada57">
+                            <p id="seaplico57">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="cincuentaochodosis"></span>
+                        <p id="fechaGuardada58"></p>
+                        <div id="aplicada58id" class="aplicada58">
+                            <p id="seaplico58">No aplicada</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="antiparasitarios-30">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-30">
+                        <p>Primera dosis:</p>
+                        <span id="cincuentanuevedosis"></span>
+                        <p id="fechaGuardada59"></p>
+                        <div id="aplicada59id" class="aplicada59">
+                            <p id="seaplico59">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="sesentadosis"></span>
+                        <p id="fechaGuardada60"></p>
+                        <div id="aplicada60id" class="aplicada60">
+                            <p id="seaplico60">No aplicada</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="antiparasitarios-31">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-31">
+                        <p>Primera dosis:</p>
+                        <span id="sesentaunodosis"></span>
+                        <p id="fechaGuardada61"></p>
+                        <div id="aplicada61id" class="aplicada61">
+                            <p id="seaplico61">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="sesentadosdosis"></span>
+                        <p id="fechaGuardada62"></p>
+                        <div id="aplicada62id" class="aplicada62">
+                            <p id="seaplico62">No aplicada</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="antiparasitarios-32">
+                        <label for="1radosis">Antiparasitarios</label>
+                        <div class="dosis-32">
+                        <p>Primera dosis:</p>
+                        <span id="sesentatresdosis"></span>
+                        <p id="fechaGuardada63"></p>
+                        <div id="aplicada63id" class="aplicada63">
+                            <p id="seaplico63">No aplicada</p>
+                        </div>
+                        <p>Segunda dosis:</p>
+                        <span id="sesentacuatrodosis"></span>
+                        <p id="fechaGuardada64"></p>
+                        <div id="aplicada64id" class="aplicada64">
+                            <p id="seaplico64">No aplicada</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="antiparasitarios-vacio"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu -->
+            <nav class="nav">
+                <a href="preguntas.html" class="nav-link">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p class="nav-text">Información</p>
+                </a>
+                <a href="#" class="nav-link nav-link--active">
+                    <i class="fa-solid fa-house"></i>
+                    <p class="nav-text">Inicio</p>
+                </a>
+                <a href="tienda.html" class="nav-link">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p class="nav-text">Tienda</p>
+                </a>
+            </nav>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+            <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+            <script type="text/javascript" src="js/stacktrace.min.js"></script>
+                <script type="text/javascript" src="js/control.js"></script>
+
+    </body>
+</html>
