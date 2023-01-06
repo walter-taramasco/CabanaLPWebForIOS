@@ -1,23 +1,31 @@
-
 //Nombre Conejo
+let alertaPositiva = document.querySelector(".alert-success");
 var divRemove = document.getElementById('remove-conejo-name');
 var padre = divRemove.parentNode;
 var pNombre = document.getElementById('nombredelconejo');
 var limpiar = document.getElementById('limpiar');
 var a;
 var minimo = 3;
+let conejoName = document.getElementById("conejoname");
 
 /* Eliminar el input confirmar y el de texto, esto tambien confirma el nombre del conejo */
 document.querySelector(".confirmacion").addEventListener("click", () => {
-console.log("El click anda");
-a = document.getElementById('conejoname').value;
-padre.removeChild(divRemove);
-limpiar.style.display = 'inline';
-pNombre.textContent = a;
-localStorage.setItem('nombredelconejo-1' , a);
+  if(conejoName.value.length > 0) {
+  a = document.getElementById('conejoname').value;
+  padre.removeChild(divRemove);
+  limpiar.style.display = 'inline';
+  pNombre.textContent = a;
+  localStorage.setItem('nombredelconejo-1' , a);
+  // alerta para avisar que se colocó bien el nombre
+  alertaPositiva.textContent = "Se ha añadido correctamente el nombre del conejo!"
+  alertaPositiva.style.display = "flex";
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
+}
 });
 
-// Al tocar Cambiar nombre se limpia el parrafo donde se almacenaba el texto y el input para escribir 
+// Al tocar Cambiar nombre se limpia el parrafo donde se almacenaba el texto y el input para escribir
 document.querySelector(".resetear").addEventListener("click", () => {
 padre.appendChild(divRemove);
 document.getElementById('conejoname').value="";
@@ -25,6 +33,11 @@ document.getElementById('nombredelconejo').textContent="";
 limpiar.style.display = 'none';
 localStorage.removeItem('nombredelconejo-1');
 document.getElementById('localNombre').textContent="";
+  alertaPositiva.textContent = "Se ha eliminado correctamente el nombre del conejo!"
+  alertaPositiva.style.display = "flex";
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var nombreStorageConejo = localStorage.getItem('nombredelconejo-1');
@@ -184,13 +197,14 @@ var mes1 = 3;
 
 // Evento click confirmar fecha
 document.querySelector(".confirmar-fecha").addEventListener("click", () => {
+if(fechaDeNacimiento.value.length > 0) {
 fechaIntroducida = fechaDeNacimiento.value;
 var fechaP = new Date(fechaIntroducida);
 fechaP.setMinutes(fechaP.getMinutes() + fechaP.getTimezoneOffset());
 pFecha.innerText = fechaP.getDate() + '/' + (fechaP.getMonth() + 1) + '/' + fechaP.getFullYear();
 pFecha.style.display = 'inline';
 //1
-var laFecha1 = new Date(fechaIntroducida); 
+var laFecha1 = new Date(fechaIntroducida);
 laFecha1.setMinutes(laFecha1.getMinutes() + laFecha1.getTimezoneOffset());
 laFecha1.setMonth(laFecha1.getMonth() + mes1);
 dosis1.innerText = laFecha1.getDate() + '/' + (laFecha1.getMonth() + 1) + '/' + laFecha1.getFullYear();
@@ -200,7 +214,7 @@ laFecha2.setMonth(laFecha2.getMonth() + mes1);
 laFecha2.setDate(laFecha2.getDate() + dias15 );
 dosis2.innerText = laFecha2.getDate() + '/' + (laFecha2.getMonth() + 1) + '/' + laFecha2.getFullYear();
 //2
-var laFecha3 = new Date(fechaIntroducida); 
+var laFecha3 = new Date(fechaIntroducida);
 laFecha3.setMinutes(laFecha3.getMinutes() + laFecha3.getTimezoneOffset());
 laFecha3.setMonth(laFecha3.getMonth() + mes1 * 2);
 dosis3.innerText = laFecha3.getDate() + '/' + (laFecha3.getMonth() + 1) + '/' + laFecha3.getFullYear();
@@ -214,7 +228,7 @@ var laFecha5 = new Date(fechaIntroducida);
 laFecha5.setMinutes(laFecha5.getMinutes() + laFecha5.getTimezoneOffset());
 laFecha5.setMonth(laFecha5.getMonth() + mes1  * 3);
 dosis5.innerText = laFecha5.getDate() + '/' + (laFecha5.getMonth() + 1) + '/' + laFecha5.getFullYear();
-var laFecha6 = new Date(fechaIntroducida); 
+var laFecha6 = new Date(fechaIntroducida);
 laFecha6.setMinutes(laFecha6.getMinutes() + laFecha6.getTimezoneOffset());
 laFecha6.setMonth(laFecha6.getMonth() + mes1 * 3);
 laFecha6.setDate(laFecha6.getDate() + dias15 );
@@ -224,17 +238,17 @@ var laFecha7 = new Date(fechaIntroducida);
 laFecha7.setMinutes(laFecha7.getMinutes() + laFecha7.getTimezoneOffset());
 laFecha7.setMonth(laFecha7.getMonth() + mes1 * 4);
 dosis7.innerText = laFecha7.getDate() + '/' + (laFecha7.getMonth() + 1) + '/' + laFecha7.getFullYear();
-var laFecha8 = new Date(fechaIntroducida); 
+var laFecha8 = new Date(fechaIntroducida);
 laFecha8.setMinutes(laFecha8.getMinutes() + laFecha8.getTimezoneOffset());
 laFecha8.setMonth(laFecha8.getMonth() + mes1 * 4);
 laFecha8.setDate(laFecha8.getDate() + dias15 );
 dosis8.innerText = laFecha8.getDate() + '/' + (laFecha8.getMonth() + 1) + '/' + laFecha8.getFullYear();
 //5
-var laFecha9 = new Date(fechaIntroducida); 
+var laFecha9 = new Date(fechaIntroducida);
 laFecha9.setMinutes(laFecha9.getMinutes() + laFecha9.getTimezoneOffset());
 laFecha9.setMonth(laFecha9.getMonth() + mes1 * 5);
 dosis9.innerText = laFecha9.getDate() + '/' + (laFecha9.getMonth() + 1) + '/' + laFecha9.getFullYear();
-var laFecha10 = new Date(fechaIntroducida); 
+var laFecha10 = new Date(fechaIntroducida);
 laFecha10.setMinutes(laFecha10.getMinutes() + laFecha10.getTimezoneOffset());
 laFecha10.setMonth(laFecha10.getMonth() + mes1 * 5);
 laFecha10.setDate(laFecha10.getDate() + dias15 );
@@ -244,7 +258,7 @@ var laFecha11 = new Date(fechaIntroducida);
 laFecha11.setMinutes(laFecha11.getMinutes() + laFecha11.getTimezoneOffset());
 laFecha11.setMonth(laFecha11.getMonth() + mes1 * 6);
 dosis11.innerText = laFecha11.getDate() + '/' + (laFecha11.getMonth() + 1) + '/' + laFecha11.getFullYear();
-var laFecha12 = new Date(fechaIntroducida); 
+var laFecha12 = new Date(fechaIntroducida);
 laFecha12.setMinutes(laFecha12.getMinutes() + laFecha12.getTimezoneOffset());
 laFecha12.setMonth(laFecha12.getMonth() + mes1 * 6);
 laFecha12.setDate(laFecha12.getDate() + dias15 );
@@ -264,13 +278,13 @@ var laFecha15 = new Date(fechaIntroducida);
 laFecha15.setMinutes(laFecha15.getMinutes() + laFecha15.getTimezoneOffset());
 laFecha15.setMonth(laFecha15.getMonth() + mes1 * 8);
 dosis15.innerText = laFecha15.getDate() + '/' + (laFecha15.getMonth() + 1) + '/' + laFecha15.getFullYear();
-var laFecha16 = new Date(fechaIntroducida); 
+var laFecha16 = new Date(fechaIntroducida);
 laFecha16.setMinutes(laFecha16.getMinutes() + laFecha16.getTimezoneOffset());
 laFecha16.setMonth(laFecha16.getMonth() + mes1 * 8);
 laFecha16.setDate(laFecha16.getDate() + dias15 );
 dosis16.innerText = laFecha16.getDate() + '/' + (laFecha16.getMonth() + 1) + '/' + laFecha16.getFullYear();
 //9
-var laFecha17 = new Date(fechaIntroducida); 
+var laFecha17 = new Date(fechaIntroducida);
 laFecha17.setMinutes(laFecha17.getMinutes() + laFecha17.getTimezoneOffset());
 laFecha17.setMonth(laFecha17.getMonth() + mes1 * 9);
 dosis17.innerText = laFecha17.getDate() + '/' + (laFecha17.getMonth() + 1) + '/' + laFecha17.getFullYear();
@@ -280,7 +294,7 @@ laFecha18.setMonth(laFecha18.getMonth() + mes1 * 9);
 laFecha18.setDate(laFecha18.getDate() + dias15 );
 dosis18.innerText = laFecha18.getDate() + '/' + (laFecha18.getMonth() + 1) + '/' + laFecha18.getFullYear();
 //10
-var laFecha19 = new Date(fechaIntroducida); 
+var laFecha19 = new Date(fechaIntroducida);
 laFecha19.setMinutes(laFecha19.getMinutes() + laFecha19.getTimezoneOffset());
 laFecha19.setMonth(laFecha19.getMonth() + mes1 * 10);
 dosis19.innerText = laFecha19.getDate() + '/' + (laFecha19.getMonth() + 1) + '/' + laFecha19.getFullYear();
@@ -294,27 +308,27 @@ var laFecha21 = new Date(fechaIntroducida);
 laFecha21.setMinutes(laFecha21.getMinutes() + laFecha21.getTimezoneOffset());
 laFecha21.setMonth(laFecha21.getMonth() + mes1 * 11);
 dosis21.innerText = laFecha21.getDate() + '/' + (laFecha21.getMonth() + 1) + '/' + laFecha21.getFullYear();
-var laFecha22 = new Date(fechaIntroducida); 
+var laFecha22 = new Date(fechaIntroducida);
 laFecha22.setMinutes(laFecha22.getMinutes() + laFecha22.getTimezoneOffset());
 laFecha22.setMonth(laFecha22.getMonth() + mes1 * 11);
 laFecha22.setDate(laFecha22.getDate() + dias15 );
 dosis22.innerText = laFecha22.getDate() + '/' + (laFecha22.getMonth() + 1) + '/' + laFecha22.getFullYear();
 //12
-var laFecha23 = new Date(fechaIntroducida); 
+var laFecha23 = new Date(fechaIntroducida);
 laFecha23.setMinutes(laFecha23.getMinutes() + laFecha23.getTimezoneOffset());
 laFecha23.setMonth(laFecha23.getMonth() + mes1 * 12);
 dosis23.innerText = laFecha23.getDate() + '/' + (laFecha23.getMonth() + 1) + '/' + laFecha23.getFullYear();
-var laFecha24 = new Date(fechaIntroducida); 
+var laFecha24 = new Date(fechaIntroducida);
 laFecha24.setMinutes(laFecha24.getMinutes() + laFecha24.getTimezoneOffset());
 laFecha24.setMonth(laFecha24.getMonth() + mes1 * 12);
 laFecha24.setDate(laFecha24.getDate() + dias15 );
 dosis24.innerText = laFecha24.getDate() + '/' + (laFecha24.getMonth() + 1) + '/' + laFecha24.getFullYear();
 //13
-var laFecha25 = new Date(fechaIntroducida); 
+var laFecha25 = new Date(fechaIntroducida);
 laFecha25.setMinutes(laFecha25.getMinutes() + laFecha25.getTimezoneOffset());
 laFecha25.setMonth(laFecha25.getMonth() + mes1 * 13);
 dosis25.innerText = laFecha25.getDate() + '/' + (laFecha25.getMonth() + 1) + '/' + laFecha25.getFullYear();
-var laFecha26 = new Date(fechaIntroducida); 
+var laFecha26 = new Date(fechaIntroducida);
 laFecha26.setMinutes(laFecha26.getMinutes() + laFecha26.getTimezoneOffset());
 laFecha26.setMonth(laFecha26.getMonth() + mes1 * 13);
 laFecha26.setDate(laFecha26.getDate() + dias15 );
@@ -324,7 +338,7 @@ var laFecha27 = new Date(fechaIntroducida);
 laFecha27.setMinutes(laFecha27.getMinutes() + laFecha27.getTimezoneOffset());
 laFecha27.setMonth(laFecha27.getMonth() + mes1 * 14);
 dosis27.innerText = laFecha27.getDate() + '/' + (laFecha27.getMonth() + 1) + '/' + laFecha27.getFullYear();
-var laFecha28 = new Date(fechaIntroducida); 
+var laFecha28 = new Date(fechaIntroducida);
 laFecha28.setMinutes(laFecha28.getMinutes() + laFecha28.getTimezoneOffset());
 laFecha28.setMonth(laFecha28.getMonth() + mes1 * 14);
 laFecha28.setDate(laFecha28.getDate() + dias15 );
@@ -344,13 +358,13 @@ var laFecha31 = new Date(fechaIntroducida);
 laFecha31.setMinutes(laFecha31.getMinutes() + laFecha31.getTimezoneOffset());
 laFecha31.setMonth(laFecha31.getMonth() + mes1 * 16);
 dosis31.innerText = laFecha31.getDate() + '/' + (laFecha31.getMonth() + 1) + '/' + laFecha31.getFullYear();
-var laFecha32 = new Date(fechaIntroducida); 
+var laFecha32 = new Date(fechaIntroducida);
 laFecha32.setMinutes(laFecha32.getMinutes() + laFecha32.getTimezoneOffset());
 laFecha32.setMonth(laFecha32.getMonth() + mes1 * 16);
 laFecha32.setDate(laFecha32.getDate() + dias15 );
 dosis32.innerText = laFecha32.getDate() + '/' + (laFecha32.getMonth() + 1) + '/' + laFecha32.getFullYear();
 //17
-var laFecha33 = new Date(fechaIntroducida); 
+var laFecha33 = new Date(fechaIntroducida);
 laFecha33.setMinutes(laFecha33.getMinutes() + laFecha33.getTimezoneOffset());
 laFecha33.setMonth(laFecha33.getMonth() + mes1 * 17);
 dosis33.innerText = laFecha33.getDate() + '/' + (laFecha33.getMonth() + 1) + '/' + laFecha33.getFullYear();
@@ -364,27 +378,27 @@ var laFecha35 = new Date(fechaIntroducida);
 laFecha35.setMinutes(laFecha35.getMinutes() + laFecha35.getTimezoneOffset());
 laFecha35.setMonth(laFecha35.getMonth() + mes1 * 18);
 dosis35.innerText = laFecha35.getDate() + '/' + (laFecha35.getMonth() + 1) + '/' + laFecha35.getFullYear();
-var laFecha36 = new Date(fechaIntroducida); 
+var laFecha36 = new Date(fechaIntroducida);
 laFecha36.setMinutes(laFecha36.getMinutes() + laFecha36.getTimezoneOffset());
 laFecha36.setMonth(laFecha36.getMonth() + mes1 * 18);
 laFecha36.setDate(laFecha36.getDate() + dias15 );
 dosis36.innerText = laFecha36.getDate() + '/' + (laFecha36.getMonth() + 1) + '/' + laFecha36.getFullYear();
 //19
-var laFecha37 = new Date(fechaIntroducida); 
+var laFecha37 = new Date(fechaIntroducida);
 laFecha37.setMinutes(laFecha37.getMinutes() + laFecha37.getTimezoneOffset());
 laFecha37.setMonth(laFecha37.getMonth() + mes1 * 19);
 dosis37.innerText = laFecha37.getDate() + '/' + (laFecha37.getMonth() + 1) + '/' + laFecha37.getFullYear();
-var laFecha38 = new Date(fechaIntroducida); 
+var laFecha38 = new Date(fechaIntroducida);
 laFecha38.setMinutes(laFecha38.getMinutes() + laFecha38.getTimezoneOffset());
 laFecha38.setMonth(laFecha38.getMonth() + mes1 * 19);
 laFecha38.setDate(laFecha38.getDate() + dias15 );
 dosis38.innerText = laFecha38.getDate() + '/' + (laFecha38.getMonth() + 1) + '/' + laFecha38.getFullYear();
 //20
-var laFecha39 = new Date(fechaIntroducida); 
+var laFecha39 = new Date(fechaIntroducida);
 laFecha39.setMinutes(laFecha39.getMinutes() + laFecha39.getTimezoneOffset());
 laFecha39.setMonth(laFecha39.getMonth() + mes1 * 20);
 dosis39.innerText = laFecha39.getDate() + '/' + (laFecha39.getMonth() + 1) + '/' + laFecha39.getFullYear();
-var laFecha40 = new Date(fechaIntroducida); 
+var laFecha40 = new Date(fechaIntroducida);
 laFecha40.setMinutes(laFecha40.getMinutes() + laFecha40.getTimezoneOffset());
 laFecha40.setMonth(laFecha40.getMonth() + mes1 * 20);
 laFecha40.setDate(laFecha40.getDate() + dias15 );
@@ -394,23 +408,23 @@ var laFecha41 = new Date(fechaIntroducida);
 laFecha41.setMinutes(laFecha41.getMinutes() + laFecha41.getTimezoneOffset());
 laFecha41.setMonth(laFecha41.getMonth() + mes1 * 21);
 dosis41.innerText = laFecha41.getDate() + '/' + (laFecha41.getMonth() + 1) + '/' + laFecha41.getFullYear();
-var laFecha42 = new Date(fechaIntroducida); 
+var laFecha42 = new Date(fechaIntroducida);
 laFecha42.setMinutes(laFecha42.getMinutes() + laFecha42.getTimezoneOffset());
 laFecha42.setMonth(laFecha42.getMonth() + mes1 * 21);
 laFecha42.setDate(laFecha42.getDate() + dias15 );
 dosis42.innerText = laFecha42.getDate() + '/' + (laFecha42.getMonth() + 1) + '/' + laFecha42.getFullYear();
 //22
-var laFecha43 = new Date(fechaIntroducida); 
+var laFecha43 = new Date(fechaIntroducida);
 laFecha43.setMinutes(laFecha43.getMinutes() + laFecha43.getTimezoneOffset());
 laFecha43.setMonth(laFecha43.getMonth() + mes1 * 22);
 dosis43.innerText = laFecha43.getDate() + '/' + (laFecha43.getMonth() + 1) + '/' + laFecha43.getFullYear();
-var laFecha44 = new Date(fechaIntroducida); 
+var laFecha44 = new Date(fechaIntroducida);
 laFecha44.setMinutes(laFecha44.getMinutes() + laFecha44.getTimezoneOffset());
 laFecha44.setMonth(laFecha44.getMonth() + mes1 * 22);
 laFecha44.setDate(laFecha44.getDate() + dias15 );
 dosis44.innerText = laFecha44.getDate() + '/' + (laFecha44.getMonth() + 1) + '/' + laFecha44.getFullYear();
 //23
-var laFecha45 = new Date(fechaIntroducida); 
+var laFecha45 = new Date(fechaIntroducida);
 laFecha45.setMinutes(laFecha45.getMinutes() + laFecha45.getTimezoneOffset());
 laFecha45.setMonth(laFecha45.getMonth() + mes1 * 23);
 dosis45.innerText = laFecha45.getDate() + '/' + (laFecha45.getMonth() + 1) + '/' + laFecha45.getFullYear();
@@ -424,27 +438,27 @@ var laFecha47 = new Date(fechaIntroducida);
 laFecha47.setMinutes(laFecha47.getMinutes() + laFecha47.getTimezoneOffset());
 laFecha47.setMonth(laFecha47.getMonth() + mes1 * 24);
 dosis47.innerText = laFecha47.getDate() + '/' + (laFecha47.getMonth() + 1) + '/' + laFecha47.getFullYear();
-var laFecha48 = new Date(fechaIntroducida); 
+var laFecha48 = new Date(fechaIntroducida);
 laFecha48.setMinutes(laFecha48.getMinutes() + laFecha48.getTimezoneOffset());
 laFecha48.setMonth(laFecha48.getMonth() + mes1 * 24);
 laFecha48.setDate(laFecha48.getDate() + dias15 );
 dosis48.innerText = laFecha48.getDate() + '/' + (laFecha48.getMonth() + 1) + '/' + laFecha48.getFullYear();
 //25
-var laFecha49 = new Date(fechaIntroducida); 
+var laFecha49 = new Date(fechaIntroducida);
 laFecha49.setMinutes(laFecha49.getMinutes() + laFecha49.getTimezoneOffset());
 laFecha49.setMonth(laFecha49.getMonth() + mes1 * 25);
 dosis49.innerText = laFecha49.getDate() + '/' + (laFecha49.getMonth() + 1) + '/' + laFecha49.getFullYear();
-var laFecha50 = new Date(fechaIntroducida); 
+var laFecha50 = new Date(fechaIntroducida);
 laFecha50.setMinutes(laFecha50.getMinutes() + laFecha50.getTimezoneOffset());
 laFecha50.setMonth(laFecha50.getMonth() + mes1 * 25);
 laFecha50.setDate(laFecha50.getDate() + dias15 );
 dosis50.innerText = laFecha50.getDate() + '/' + (laFecha50.getMonth() + 1) + '/' + laFecha50.getFullYear();
 //26
-var laFecha51 = new Date(fechaIntroducida); 
+var laFecha51 = new Date(fechaIntroducida);
 laFecha51.setMinutes(laFecha51.getMinutes() + laFecha51.getTimezoneOffset());
 laFecha51.setMonth(laFecha51.getMonth() + mes1 * 26);
 dosis51.innerText = laFecha51.getDate() + '/' + (laFecha51.getMonth() + 1) + '/' + laFecha51.getFullYear();
-var laFecha52 = new Date(fechaIntroducida); 
+var laFecha52 = new Date(fechaIntroducida);
 laFecha52.setMinutes(laFecha52.getMinutes() + laFecha52.getTimezoneOffset());
 laFecha52.setMonth(laFecha52.getMonth() + mes1 * 26);
 laFecha52.setDate(laFecha52.getDate() + dias15 );
@@ -470,17 +484,17 @@ laFecha56.setMonth(laFecha56.getMonth() + mes1 * 28);
 laFecha56.setDate(laFecha56.getDate() + dias15 );
 dosis56.innerText = laFecha56.getDate() + '/' + (laFecha56.getMonth() + 1) + '/' + laFecha56.getFullYear();
 //29
-var laFecha57 = new Date(fechaIntroducida); 
+var laFecha57 = new Date(fechaIntroducida);
 laFecha57.setMinutes(laFecha57.getMinutes() + laFecha57.getTimezoneOffset());
 laFecha57.setMonth(laFecha57.getMonth() + mes1 * 29);
 dosis57.innerText = laFecha57.getDate() + '/' + (laFecha57.getMonth() + 1) + '/' + laFecha57.getFullYear();
-var laFecha58 = new Date(fechaIntroducida); 
+var laFecha58 = new Date(fechaIntroducida);
 laFecha58.setMinutes(laFecha58.getMinutes() + laFecha58.getTimezoneOffset());
 laFecha58.setMonth(laFecha58.getMonth() + mes1 * 29);
 laFecha58.setDate(laFecha58.getDate() + dias15 );
 dosis58.innerText = laFecha58.getDate() + '/' + (laFecha58.getMonth() + 1) + '/' + laFecha58.getFullYear();
 //30
-var laFecha59 = new Date(fechaIntroducida); 
+var laFecha59 = new Date(fechaIntroducida);
 laFecha59.setMinutes(laFecha59.getMinutes() + laFecha59.getTimezoneOffset());
 laFecha59.setMonth(laFecha59.getMonth() + mes1 * 30);
 dosis59.innerText = laFecha59.getDate() + '/' + (laFecha59.getMonth() + 1) + '/' + laFecha59.getFullYear();
@@ -494,17 +508,17 @@ var laFecha61 = new Date(fechaIntroducida);
 laFecha61.setMinutes(laFecha61.getMinutes() + laFecha61.getTimezoneOffset());
 laFecha61.setMonth(laFecha61.getMonth() + mes1 * 31);
 dosis61.innerText = laFecha61.getDate() + '/' + (laFecha61.getMonth() + 1) + '/' + laFecha61.getFullYear();
-var laFecha62 = new Date(fechaIntroducida); 
+var laFecha62 = new Date(fechaIntroducida);
 laFecha62.setMinutes(laFecha62.getMinutes() + laFecha2.getTimezoneOffset());
 laFecha62.setMonth(laFecha62.getMonth() + mes1 * 31);
 laFecha62.setDate(laFecha62.getDate() + dias15 );
 dosis62.innerText = laFecha62.getDate() + '/' + (laFecha62.getMonth() + 1) + '/' + laFecha62.getFullYear();
 //32
-var laFecha63 = new Date(fechaIntroducida); 
+var laFecha63 = new Date(fechaIntroducida);
 laFecha63.setMinutes(laFecha63.getMinutes() + laFecha63.getTimezoneOffset());
 laFecha63.setMonth(laFecha63.getMonth() + mes1 * 32);
 dosis63.innerText = laFecha63.getDate() + '/' + (laFecha63.getMonth() + 1) + '/' + laFecha63.getFullYear();
-var laFecha64 = new Date(fechaIntroducida); 
+var laFecha64 = new Date(fechaIntroducida);
 laFecha64.setMinutes(laFecha64.getMinutes() + laFecha64.getTimezoneOffset());
 laFecha64.setMonth(laFecha64.getMonth() + mes1 * 32);
 laFecha64.setDate(laFecha64.getDate() + dias15 );
@@ -576,7 +590,14 @@ localStorage.setItem('LocalFecha61', dosis61.innerText);
 localStorage.setItem('LocalFecha62', dosis62.innerText);
 localStorage.setItem('LocalFecha63', dosis63.innerText);
 localStorage.setItem('LocalFecha64', dosis64.innerText);
-}); 
+
+  alertaPositiva.textContent = "Se ha confirmado correctamente la fecha de nacimiento del conejo!"
+  alertaPositiva.style.display = "flex";
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
+}
+});
 
 //
 var StorageFecha1 = localStorage.getItem('LocalFecha1');
@@ -753,7 +774,7 @@ pFechaLocal16.style.display = 'inline';
 
 if(StorageFecha16.length < minimo) {
 pFechaLocal16.style.display = 'none';
-} 
+}
 
 var StorageFecha17 = localStorage.getItem('LocalFecha17');
 pFechaLocal17.textContent = StorageFecha17;
@@ -1802,7 +1823,15 @@ document.getElementById('seaplico63').textContent = "No aplicada";
 localStorage.removeItem('ColorAplicado64');
 localStorage.removeItem('NombreAplicado64');
 document.getElementById('aplicada64id').style.backgroundColor = 'red';
-document.getElementById('seaplico64').textContent = "No aplicada";
+  document.getElementById('seaplico64').textContent = "No aplicada";
+
+  alertaPositiva.textContent = "Se ha reseteado correctamente la fecha de nacimiento del conejo!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo(0, 0);
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
+
 });
 
 var StorageFecha = localStorage.getItem('LocalFecha');
@@ -1820,12 +1849,18 @@ pFechaLocal.style.display = 'none';
 }
 
 
-// Evento click al apretar el contenedor 
+// Evento click al apretar el contenedor
 document.querySelector(".aplicada1").addEventListener('click', () => {
 var seAplico1 = document.getElementById('seaplico1').textContent = "Aplicada";
 var seAplicoColor1 = document.getElementById('aplicada1id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado1', seAplicoColor1);
 localStorage.setItem('NombreAplicado1', seAplico1);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado1 = localStorage.getItem('NombreAplicado1');
@@ -1844,6 +1879,12 @@ var seAplico2 = document.getElementById('seaplico2').textContent = "Aplicada";
 var seAplicoColor2 = document.getElementById('aplicada2id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado2', seAplicoColor2);
 localStorage.setItem('NombreAplicado2', seAplico2);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado2 = localStorage.getItem('NombreAplicado2');
@@ -1862,6 +1903,12 @@ var seAplico3 = document.getElementById('seaplico3').textContent = "Aplicada";
 var seAplicoColor3 = document.getElementById('aplicada3id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado3', seAplicoColor3);
 localStorage.setItem('NombreAplicado3', seAplico3);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado3 = localStorage.getItem('NombreAplicado3');
@@ -1880,6 +1927,12 @@ var seAplico4 = document.getElementById('seaplico4').textContent = "Aplicada";
 var seAplicoColor4 = document.getElementById('aplicada4id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado4', seAplicoColor4);
 localStorage.setItem('NombreAplicado4', seAplico4);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado4 = localStorage.getItem('NombreAplicado4');
@@ -1898,6 +1951,12 @@ var seAplico5 = document.getElementById('seaplico5').textContent = "Aplicada";
 var seAplicoColor5 = document.getElementById('aplicada5id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado5', seAplicoColor5);
 localStorage.setItem('NombreAplicado5', seAplico5);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado5 = localStorage.getItem('NombreAplicado5');
@@ -1916,6 +1975,12 @@ var seAplico6 = document.getElementById('seaplico6').textContent = "Aplicada";
 var seAplicoColor6 = document.getElementById('aplicada6id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado6', seAplicoColor6);
 localStorage.setItem('NombreAplicado6', seAplico6);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado6 = localStorage.getItem('NombreAplicado6');
@@ -1934,6 +1999,12 @@ var seAplico7 = document.getElementById('seaplico7').textContent = "Aplicada";
 var seAplicoColor7 = document.getElementById('aplicada7id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado7', seAplicoColor7);
 localStorage.setItem('NombreAplicado7', seAplico7);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado7 = localStorage.getItem('NombreAplicado7');
@@ -1952,6 +2023,12 @@ var seAplico8 = document.getElementById('seaplico8').textContent = "Aplicada";
 var seAplicoColor8 = document.getElementById('aplicada8id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado8', seAplicoColor8);
 localStorage.setItem('NombreAplicado8', seAplico8);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado8 = localStorage.getItem('NombreAplicado8');
@@ -1970,6 +2047,12 @@ var seAplico9 = document.getElementById('seaplico9').textContent = "Aplicada";
 var seAplicoColor9 = document.getElementById('aplicada9id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado9', seAplicoColor9);
 localStorage.setItem('NombreAplicado9', seAplico9);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado9 = localStorage.getItem('NombreAplicado9');
@@ -1988,6 +2071,12 @@ var seAplico10 = document.getElementById('seaplico10').textContent = "Aplicada";
 var seAplicoColor10 = document.getElementById('aplicada10id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado10', seAplicoColor10);
 localStorage.setItem('NombreAplicado10', seAplico10);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado10 = localStorage.getItem('NombreAplicado10');
@@ -2006,6 +2095,12 @@ var seAplico11 = document.getElementById('seaplico11').textContent = "Aplicada";
 var seAplicoColor11 = document.getElementById('aplicada11id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado11', seAplicoColor11);
 localStorage.setItem('NombreAplicado11', seAplico11);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado11 = localStorage.getItem('NombreAplicado11');
@@ -2024,6 +2119,12 @@ var seAplico12 = document.getElementById('seaplico12').textContent = "Aplicada";
 var seAplicoColor12 = document.getElementById('aplicada12id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado12', seAplicoColor12);
 localStorage.setItem('NombreAplicado12', seAplico12);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado12 = localStorage.getItem('NombreAplicado12');
@@ -2042,6 +2143,12 @@ var seAplico13 = document.getElementById('seaplico13').textContent = "Aplicada";
 var seAplicoColor13 = document.getElementById('aplicada13id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado13', seAplicoColor13);
 localStorage.setItem('NombreAplicado13', seAplico13);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado13 = localStorage.getItem('NombreAplicado13');
@@ -2060,6 +2167,12 @@ var seAplico14 = document.getElementById('seaplico14').textContent = "Aplicada";
 var seAplicoColor14 = document.getElementById('aplicada14id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado14', seAplicoColor14);
 localStorage.setItem('NombreAplicado14', seAplico14);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado14 = localStorage.getItem('NombreAplicado14');
@@ -2078,6 +2191,12 @@ var seAplico15 = document.getElementById('seaplico15').textContent = "Aplicada";
 var seAplicoColor15 = document.getElementById('aplicada15id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado15', seAplicoColor15);
 localStorage.setItem('NombreAplicado15', seAplico15);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado15 = localStorage.getItem('NombreAplicado15');
@@ -2089,31 +2208,18 @@ var storageColorAplicado15 = localStorage.getItem('ColorAplicado15');
 if(storageColorAplicado15.length > minimo) {
 document.getElementById('aplicada15id').style.backgroundColor = 'green';
 }
-
-
-document.querySelector(".aplicada15").addEventListener('click', () => {
-var seAplico15 = document.getElementById('seaplico15').textContent = "Aplicada";
-var seAplicoColor15 = document.getElementById('aplicada15id').style.backgroundColor = 'green';
-localStorage.setItem('ColorAplicado15', seAplicoColor15);
-localStorage.setItem('NombreAplicado15', seAplico15);
-});
-
-var storageNombreAplicado15 = localStorage.getItem('NombreAplicado15');
-if(storageNombreAplicado15.length > minimo) {
-document.getElementById('seaplico15').textContent = storageNombreAplicado15;
-}
-
-var storageColorAplicado15 = localStorage.getItem('ColorAplicado15');
-if(storageColorAplicado15.length > minimo) {
-document.getElementById('aplicada15id').style.backgroundColor = 'green';
-}
-
 
 document.querySelector(".aplicada16").addEventListener('click', () => {
 var seAplico16 = document.getElementById('seaplico16').textContent = "Aplicada";
 var seAplicoColor16 = document.getElementById('aplicada16id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado16', seAplicoColor16);
 localStorage.setItem('NombreAplicado16', seAplico16);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado16 = localStorage.getItem('NombreAplicado16');
@@ -2132,6 +2238,12 @@ var seAplico17 = document.getElementById('seaplico17').textContent = "Aplicada";
 var seAplicoColor17 = document.getElementById('aplicada17id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado17', seAplicoColor17);
 localStorage.setItem('NombreAplicado17', seAplico17);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado17 = localStorage.getItem('NombreAplicado17');
@@ -2150,6 +2262,12 @@ var seAplico18 = document.getElementById('seaplico18').textContent = "Aplicada";
 var seAplicoColor18 = document.getElementById('aplicada18id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado18', seAplicoColor18);
 localStorage.setItem('NombreAplicado18', seAplico18);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado18 = localStorage.getItem('NombreAplicado18');
@@ -2168,6 +2286,12 @@ var seAplico19 = document.getElementById('seaplico19').textContent = "Aplicada";
 var seAplicoColor19 = document.getElementById('aplicada19id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado19', seAplicoColor19);
 localStorage.setItem('NombreAplicado19', seAplico19);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado19 = localStorage.getItem('NombreAplicado19');
@@ -2186,6 +2310,12 @@ var seAplico20 = document.getElementById('seaplico20').textContent = "Aplicada";
 var seAplicoColor20 = document.getElementById('aplicada20id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado20', seAplicoColor20);
 localStorage.setItem('NombreAplicado20', seAplico20);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado20 = localStorage.getItem('NombreAplicado20');
@@ -2204,6 +2334,12 @@ var seAplico21 = document.getElementById('seaplico21').textContent = "Aplicada";
 var seAplicoColor21 = document.getElementById('aplicada21id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado21', seAplicoColor21);
 localStorage.setItem('NombreAplicado21', seAplico21);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado21 = localStorage.getItem('NombreAplicado21');
@@ -2222,6 +2358,12 @@ var seAplico22 = document.getElementById('seaplico22').textContent = "Aplicada";
 var seAplicoColor22 = document.getElementById('aplicada22id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado22', seAplicoColor22);
 localStorage.setItem('NombreAplicado22', seAplico22);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado22 = localStorage.getItem('NombreAplicado22');
@@ -2240,6 +2382,12 @@ var seAplico23 = document.getElementById('seaplico23').textContent = "Aplicada";
 var seAplicoColor23 = document.getElementById('aplicada23id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado23', seAplicoColor23);
 localStorage.setItem('NombreAplicado23', seAplico23);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado23 = localStorage.getItem('NombreAplicado23');
@@ -2258,6 +2406,12 @@ var seAplico24 = document.getElementById('seaplico24').textContent = "Aplicada";
 var seAplicoColor24 = document.getElementById('aplicada24id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado24', seAplicoColor24);
 localStorage.setItem('NombreAplicado24', seAplico24);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado24 = localStorage.getItem('NombreAplicado24');
@@ -2276,6 +2430,12 @@ var seAplico25 = document.getElementById('seaplico25').textContent = "Aplicada";
 var seAplicoColor25 = document.getElementById('aplicada25id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado25', seAplicoColor25);
 localStorage.setItem('NombreAplicado25', seAplico25);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado25 = localStorage.getItem('NombreAplicado25');
@@ -2294,6 +2454,12 @@ var seAplico26 = document.getElementById('seaplico26').textContent = "Aplicada";
 var seAplicoColor26 = document.getElementById('aplicada26id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado26', seAplicoColor26);
 localStorage.setItem('NombreAplicado26', seAplico26);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado26 = localStorage.getItem('NombreAplicado26');
@@ -2312,6 +2478,12 @@ var seAplico27 = document.getElementById('seaplico27').textContent = "Aplicada";
 var seAplicoColor27 = document.getElementById('aplicada27id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado27', seAplicoColor27);
 localStorage.setItem('NombreAplicado27', seAplico27);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado27 = localStorage.getItem('NombreAplicado27');
@@ -2330,6 +2502,12 @@ var seAplico28 = document.getElementById('seaplico28').textContent = "Aplicada";
 var seAplicoColor28 = document.getElementById('aplicada28id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado28', seAplicoColor28);
 localStorage.setItem('NombreAplicado28', seAplico28);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado28 = localStorage.getItem('NombreAplicado28');
@@ -2348,6 +2526,12 @@ var seAplico29 = document.getElementById('seaplico29').textContent = "Aplicada";
 var seAplicoColor29 = document.getElementById('aplicada29id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado29', seAplicoColor29);
 localStorage.setItem('NombreAplicado29', seAplico29);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado29 = localStorage.getItem('NombreAplicado29');
@@ -2366,6 +2550,12 @@ var seAplico30 = document.getElementById('seaplico30').textContent = "Aplicada";
 var seAplicoColor30 = document.getElementById('aplicada30id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado30', seAplicoColor30);
 localStorage.setItem('NombreAplicado30', seAplico30);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado30 = localStorage.getItem('NombreAplicado30');
@@ -2384,6 +2574,12 @@ var seAplico31 = document.getElementById('seaplico31').textContent = "Aplicada";
 var seAplicoColor31 = document.getElementById('aplicada31id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado31', seAplicoColor31);
 localStorage.setItem('NombreAplicado31', seAplico31);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado31 = localStorage.getItem('NombreAplicado31');
@@ -2402,6 +2598,12 @@ var seAplico32 = document.getElementById('seaplico32').textContent = "Aplicada";
 var seAplicoColor32 = document.getElementById('aplicada32id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado32', seAplicoColor32);
 localStorage.setItem('NombreAplicado32', seAplico32);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado32 = localStorage.getItem('NombreAplicado32');
@@ -2420,6 +2622,12 @@ var seAplico33 = document.getElementById('seaplico33').textContent = "Aplicada";
 var seAplicoColor33 = document.getElementById('aplicada33id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado33', seAplicoColor33);
 localStorage.setItem('NombreAplicado33', seAplico33);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado33 = localStorage.getItem('NombreAplicado33');
@@ -2438,6 +2646,12 @@ var seAplico34 = document.getElementById('seaplico34').textContent = "Aplicada";
 var seAplicoColor34 = document.getElementById('aplicada34id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado34', seAplicoColor34);
 localStorage.setItem('NombreAplicado34', seAplico34);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado34 = localStorage.getItem('NombreAplicado34');
@@ -2456,6 +2670,12 @@ var seAplico35 = document.getElementById('seaplico35').textContent = "Aplicada";
 var seAplicoColor35 = document.getElementById('aplicada35id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado35', seAplicoColor35);
 localStorage.setItem('NombreAplicado35', seAplico35);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado35 = localStorage.getItem('NombreAplicado35');
@@ -2474,6 +2694,12 @@ var seAplico36 = document.getElementById('seaplico36').textContent = "Aplicada";
 var seAplicoColor36 = document.getElementById('aplicada36id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado36', seAplicoColor36);
 localStorage.setItem('NombreAplicado36', seAplico36);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado36 = localStorage.getItem('NombreAplicado36');
@@ -2491,6 +2717,12 @@ var seAplico37 = document.getElementById('seaplico37').textContent = "Aplicada";
 var seAplicoColor37 = document.getElementById('aplicada37id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado37', seAplicoColor37);
 localStorage.setItem('NombreAplicado37', seAplico37);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado37 = localStorage.getItem('NombreAplicado37');
@@ -2509,6 +2741,12 @@ var seAplico38 = document.getElementById('seaplico38').textContent = "Aplicada";
 var seAplicoColor38 = document.getElementById('aplicada38id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado38', seAplicoColor38);
 localStorage.setItem('NombreAplicado38', seAplico38);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado38 = localStorage.getItem('NombreAplicado38');
@@ -2527,6 +2765,12 @@ var seAplico39 = document.getElementById('seaplico39').textContent = "Aplicada";
 var seAplicoColor39 = document.getElementById('aplicada39id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado39', seAplicoColor39);
 localStorage.setItem('NombreAplicado39', seAplico39);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado39 = localStorage.getItem('NombreAplicado39');
@@ -2545,6 +2789,12 @@ var seAplico40 = document.getElementById('seaplico40').textContent = "Aplicada";
 var seAplicoColor40 = document.getElementById('aplicada40id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado40', seAplicoColor40);
 localStorage.setItem('NombreAplicado40', seAplico40);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado40 = localStorage.getItem('NombreAplicado40');
@@ -2563,6 +2813,12 @@ var seAplico41 = document.getElementById('seaplico41').textContent = "Aplicada";
 var seAplicoColor41 = document.getElementById('aplicada41id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado41', seAplicoColor41);
 localStorage.setItem('NombreAplicado41', seAplico41);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado41 = localStorage.getItem('NombreAplicado41');
@@ -2581,6 +2837,12 @@ var seAplico42 = document.getElementById('seaplico42').textContent = "Aplicada";
 var seAplicoColor42 = document.getElementById('aplicada42id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado42', seAplicoColor42);
 localStorage.setItem('NombreAplicado42', seAplico42);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado42 = localStorage.getItem('NombreAplicado42');
@@ -2599,6 +2861,12 @@ var seAplico43 = document.getElementById('seaplico43').textContent = "Aplicada";
 var seAplicoColor43 = document.getElementById('aplicada43id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado43', seAplicoColor43);
 localStorage.setItem('NombreAplicado43', seAplico43);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado43 = localStorage.getItem('NombreAplicado43');
@@ -2616,6 +2884,12 @@ var seAplico44 = document.getElementById('seaplico44').textContent = "Aplicada";
 var seAplicoColor44 = document.getElementById('aplicada44id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado44', seAplicoColor44);
 localStorage.setItem('NombreAplicado44', seAplico44);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado44 = localStorage.getItem('NombreAplicado44');
@@ -2634,6 +2908,12 @@ var seAplico45 = document.getElementById('seaplico45').textContent = "Aplicada";
 var seAplicoColor45 = document.getElementById('aplicada45id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado45', seAplicoColor45);
 localStorage.setItem('NombreAplicado45', seAplico45);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado45 = localStorage.getItem('NombreAplicado45');
@@ -2645,31 +2925,18 @@ var storageColorAplicado45 = localStorage.getItem('ColorAplicado45');
 if(storageColorAplicado45.length > minimo) {
 document.getElementById('aplicada45id').style.backgroundColor = 'green';
 }
-
-
-document.querySelector(".aplicada45").addEventListener('click', () => {
-var seAplico45 = document.getElementById('seaplico45').textContent = "Aplicada";
-var seAplicoColor45 = document.getElementById('aplicada45id').style.backgroundColor = 'green';
-localStorage.setItem('ColorAplicado45', seAplicoColor45);
-localStorage.setItem('NombreAplicado45', seAplico45);
-});
-
-var storageNombreAplicado45 = localStorage.getItem('NombreAplicado45');
-if(storageNombreAplicado45.length > minimo) {
-document.getElementById('seaplico45').textContent = storageNombreAplicado45;
-}
-
-var storageColorAplicado45 = localStorage.getItem('ColorAplicado45');
-if(storageColorAplicado45.length > minimo) {
-document.getElementById('aplicada45id').style.backgroundColor = 'green';
-}
-
 
 document.querySelector(".aplicada46").addEventListener('click', () => {
 var seAplico46 = document.getElementById('seaplico46').textContent = "Aplicada";
 var seAplicoColor46 = document.getElementById('aplicada46id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado46', seAplicoColor46);
 localStorage.setItem('NombreAplicado46', seAplico46);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado46 = localStorage.getItem('NombreAplicado46');
@@ -2688,6 +2955,12 @@ var seAplico47 = document.getElementById('seaplico47').textContent = "Aplicada";
 var seAplicoColor47 = document.getElementById('aplicada47id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado47', seAplicoColor47);
 localStorage.setItem('NombreAplicado47', seAplico47);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado47 = localStorage.getItem('NombreAplicado47');
@@ -2706,6 +2979,12 @@ var seAplico48 = document.getElementById('seaplico48').textContent = "Aplicada";
 var seAplicoColor48 = document.getElementById('aplicada48id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado48', seAplicoColor48);
 localStorage.setItem('NombreAplicado48', seAplico48);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado48 = localStorage.getItem('NombreAplicado48');
@@ -2724,6 +3003,12 @@ var seAplico49 = document.getElementById('seaplico49').textContent = "Aplicada";
 var seAplicoColor49 = document.getElementById('aplicada49id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado49', seAplicoColor49);
 localStorage.setItem('NombreAplicado49', seAplico49);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado49 = localStorage.getItem('NombreAplicado49');
@@ -2741,24 +3026,12 @@ var seAplico49 = document.getElementById('seaplico49').textContent = "Aplicada";
 var seAplicoColor49 = document.getElementById('aplicada49id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado49', seAplicoColor49);
 localStorage.setItem('NombreAplicado49', seAplico49);
-});
-
-var storageNombreAplicado49 = localStorage.getItem('NombreAplicado49');
-if(storageNombreAplicado49.length > minimo) {
-document.getElementById('seaplico49').textContent = storageNombreAplicado49;
-}
-
-var storageColorAplicado49 = localStorage.getItem('ColorAplicado49');
-if(storageColorAplicado49.length > minimo) {
-document.getElementById('aplicada49id').style.backgroundColor = 'green';
-}
-
-
-document.querySelector(".aplicada49").addEventListener('click', () => {
-var seAplico49 = document.getElementById('seaplico49').textContent = "Aplicada";
-var seAplicoColor49 = document.getElementById('aplicada49id').style.backgroundColor = 'green';
-localStorage.setItem('ColorAplicado49', seAplicoColor49);
-localStorage.setItem('NombreAplicado49', seAplico49);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado49 = localStorage.getItem('NombreAplicado49');
@@ -2777,6 +3050,12 @@ var seAplico50 = document.getElementById('seaplico50').textContent = "Aplicada";
 var seAplicoColor50 = document.getElementById('aplicada50id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado50', seAplicoColor50);
 localStorage.setItem('NombreAplicado50', seAplico50);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado50 = localStorage.getItem('NombreAplicado50');
@@ -2794,6 +3073,12 @@ var seAplico51 = document.getElementById('seaplico51').textContent = "Aplicada";
 var seAplicoColor51 = document.getElementById('aplicada51id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado51', seAplicoColor51);
 localStorage.setItem('NombreAplicado51', seAplico51);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado51 = localStorage.getItem('NombreAplicado51');
@@ -2811,6 +3096,12 @@ var seAplico52 = document.getElementById('seaplico52').textContent = "Aplicada";
 var seAplicoColor52 = document.getElementById('aplicada52id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado52', seAplicoColor52);
 localStorage.setItem('NombreAplicado52', seAplico52);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado52 = localStorage.getItem('NombreAplicado52');
@@ -2828,6 +3119,12 @@ var seAplico53 = document.getElementById('seaplico53').textContent = "Aplicada";
 var seAplicoColor53 = document.getElementById('aplicada53id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado53', seAplicoColor53);
 localStorage.setItem('NombreAplicado53', seAplico53);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado53 = localStorage.getItem('NombreAplicado53');
@@ -2845,6 +3142,12 @@ var seAplico54 = document.getElementById('seaplico54').textContent = "Aplicada";
 var seAplicoColor54 = document.getElementById('aplicada54id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado54', seAplicoColor54);
 localStorage.setItem('NombreAplicado54', seAplico54);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado54 = localStorage.getItem('NombreAplicado54');
@@ -2862,6 +3165,12 @@ var seAplico55 = document.getElementById('seaplico55').textContent = "Aplicada";
 var seAplicoColor55 = document.getElementById('aplicada55id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado55', seAplicoColor55);
 localStorage.setItem('NombreAplicado55', seAplico55);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado55 = localStorage.getItem('NombreAplicado55');
@@ -2879,6 +3188,12 @@ var seAplico56 = document.getElementById('seaplico56').textContent = "Aplicada";
 var seAplicoColor56 = document.getElementById('aplicada56id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado56', seAplicoColor56);
 localStorage.setItem('NombreAplicado56', seAplico56);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado56 = localStorage.getItem('NombreAplicado56');
@@ -2896,6 +3211,12 @@ var seAplico57 = document.getElementById('seaplico57').textContent = "Aplicada";
 var seAplicoColor57 = document.getElementById('aplicada57id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado57', seAplicoColor57);
 localStorage.setItem('NombreAplicado57', seAplico57);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado57 = localStorage.getItem('NombreAplicado57');
@@ -2913,6 +3234,12 @@ var seAplico58 = document.getElementById('seaplico58').textContent = "Aplicada";
 var seAplicoColor58 = document.getElementById('aplicada58id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado58', seAplicoColor58);
 localStorage.setItem('NombreAplicado58', seAplico58);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado58 = localStorage.getItem('NombreAplicado58');
@@ -2930,6 +3257,12 @@ var seAplico59 = document.getElementById('seaplico59').textContent = "Aplicada";
 var seAplicoColor59 = document.getElementById('aplicada59id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado59', seAplicoColor59);
 localStorage.setItem('NombreAplicado59', seAplico59);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado59 = localStorage.getItem('NombreAplicado59');
@@ -2947,6 +3280,12 @@ var seAplico60 = document.getElementById('seaplico60').textContent = "Aplicada";
 var seAplicoColor60 = document.getElementById('aplicada60id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado60', seAplicoColor60);
 localStorage.setItem('NombreAplicado60', seAplico60);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado60 = localStorage.getItem('NombreAplicado60');
@@ -2964,6 +3303,12 @@ var seAplico61 = document.getElementById('seaplico61').textContent = "Aplicada";
 var seAplicoColor61 = document.getElementById('aplicada61id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado61', seAplicoColor61);
 localStorage.setItem('NombreAplicado61', seAplico61);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado61 = localStorage.getItem('NombreAplicado61');
@@ -2981,6 +3326,12 @@ var seAplico62 = document.getElementById('seaplico62').textContent = "Aplicada";
 var seAplicoColor62 = document.getElementById('aplicada62id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado62', seAplicoColor62);
 localStorage.setItem('NombreAplicado62', seAplico62);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado62 = localStorage.getItem('NombreAplicado62');
@@ -2999,6 +3350,12 @@ var seAplico63 = document.getElementById('seaplico63').textContent = "Aplicada";
 var seAplicoColor63 = document.getElementById('aplicada63id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado63', seAplicoColor63);
 localStorage.setItem('NombreAplicado63', seAplico63);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado63 = localStorage.getItem('NombreAplicado63');
@@ -3017,6 +3374,12 @@ var seAplico64 = document.getElementById('seaplico64').textContent = "Aplicada";
 var seAplicoColor64 = document.getElementById('aplicada64id').style.backgroundColor = 'green';
 localStorage.setItem('ColorAplicado64', seAplicoColor64);
 localStorage.setItem('NombreAplicado64', seAplico64);
+  alertaPositiva.textContent = "Se aplicó el antiparasitario!"
+  alertaPositiva.style.display = "flex";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  setTimeout(() => {
+  location.reload();
+  }, "1500")
 });
 
 var storageNombreAplicado64 = localStorage.getItem('NombreAplicado64');
@@ -3028,4 +3391,3 @@ var storageColorAplicado64 = localStorage.getItem('ColorAplicado64');
 if(storageColorAplicado64.length > minimo) {
 document.getElementById('aplicada64id').style.backgroundColor = 'green';
 }
-

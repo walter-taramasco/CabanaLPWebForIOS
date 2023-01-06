@@ -22,6 +22,16 @@ body {
     color: #292929;
 }
 
+/* Alerta */
+.alert-success {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #5271FF;
+  color: #FFF;
+  padding: 1rem;
+}
+
 /* App */
 .control {
     margin: 0 0 40px 0;
@@ -63,6 +73,7 @@ body {
 }
 
 #localNombre {
+  font-weight: bold;
     font-size: 1.8rem;
     margin: 0 0 0 10px;
 }
